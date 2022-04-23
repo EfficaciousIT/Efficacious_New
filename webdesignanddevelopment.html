@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <title>Efficacious India Limited</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-     <meta
-    content="Software development,Website development,Mobile app development,Management consultancy,Project and resource outsourcing,Custom software development,Android app development,Material design and PVC card printing,School Management software,Smart school mobile app development,school software solutions,smart restaurant management software,restaurant software,Online food delivery software,Vehicle tracking software,Fleet tracking and management software,Vehicle tracker,Live bus tracking solutions"
-    name="keywords">
-     <meta content="Efficacious is synonym to Efficient and our vision is to provide innovative & efficient solution to the
+    <meta
+        content="Software development,Website development,Mobile app development,Management consultancy,Project and resource outsourcing,Custom software development,Android app development,Material design and PVC card printing,School Management software,Smart school mobile app development,school software solutions,smart restaurant management software,restaurant software,Online food delivery software,Vehicle tracking software,Fleet tracking and management software,Vehicle tracker,Live bus tracking solutions"
+        name="keywords">
+    <meta content="Efficacious is synonym to Efficient and our vision is to provide innovative & efficient solution to the
   complex needs of Customers’ to make their life Safe, Secure & Easy.Efficacious India Limited (EIL) is a
   company incorporated in 2012 by Kamal Agrawal a core finance professional with a vision to create & provide
   innovative IT solutions for selective target segments. In the initial years the company was engaged in IT
@@ -218,7 +218,7 @@
                         </div>
                         <div class="form-group">
                             <div class="icon-addon addon-lg">
-                                <select class="form-control" name="services">
+                                <select class="form-control" id="select" name="services">
                                     <option>Interested Any Other Services</option>
                                     <option>Web Design And Development</option>
                                     <option>Mobile Application Development</option>
@@ -232,7 +232,7 @@
                         </div>
                         <div class="form-group">
                             <div class="icon-addon addon-lg">
-                                <select class="form-control" name="Budget">
+                                <select class="form-control" name="Budget" id="budget">
                                     <option>Select Budget</option>
                                     <option>15,000 to 25,000</option>
                                     <option>26,000 to 40,000</option>
@@ -244,11 +244,11 @@
                         </div>
 
                         <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" data-rule="required"
+                            <textarea class="form-control" name="message" id="message" rows="5" data-rule="required"
                                 data-msg="Please write something for us" placeholder="Message"></textarea>
                             <div class="validation"></div>
                         </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
+                        <div class="text-center"><button type="submit" id="btn">Send Message</button></div>
                     </form>
                 </div>
         </div>
@@ -314,23 +314,27 @@
                         </ul>
                     </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>What We Provide You</h4>
-            <ul>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>What We Provide You</h4>
+                        <ul>
 
-              <li><i class="ion-ios-arrow-right"></i> <a href="webdesignanddevelopment.html">Web Design &
-                  Developments</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="mobileappdevelopment.html">Mobile Application &
-                  Development</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="graphicdesign.html">Graphic Design</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="managementconsultant.html">Management Consultant</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="outsourcing.html">IT Outsourcing Work</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="kpo.html">KPO</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="pvccardprinting.html">PVC Card Print</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="webdesignanddevelopment.html">Web Design &
+                                    Developments</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="mobileappdevelopment.html">Mobile
+                                    Application &
+                                    Development</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="graphicdesign.html">Graphic Design</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="managementconsultant.html">Management
+                                    Consultant</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="outsourcing.html">IT Outsourcing Work</a>
+                            </li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="kpo.html">KPO</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="pvccardprinting.html">PVC Card Print</a>
+                            </li>
 
 
-            </ul>
-          </div>
+                        </ul>
+                    </div>
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>What We Provide You</h4>
                         <ul>
@@ -416,6 +420,20 @@
 
     <!-- Template Main Javascript File -->
     <script src="js/main.js"></script>
+    <script>
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function handleClick(event) {
+            // 👇️ if you are submitting a form
+            event.preventDefault();
+
+            const inputs = document.querySelectorAll('#name, #name, #number, #email, #subject, #select, #budget,  #message');
+
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        });
+    </script>
 
 </body>
 

@@ -201,7 +201,7 @@
                         </div>
                         <div class="form-group">
                             <div class="icon-addon addon-lg">
-                                 <select class="form-control" name="services">
+                                 <select class="form-control" id="select" name="services">
                                     <option>Interested Any Other Services</option>
                                     <option>Web Design And Development</option>
                                     <option>Mobile Application Development</option>
@@ -215,7 +215,7 @@
                         </div>
                         <div class="form-group">
                             <div class="icon-addon addon-lg">
-                                <select class="form-control" name="Budget">
+                                <select class="form-control" id="budget" name="Budget">
                                     <option>Select Budget</option>
                                     <option>15,000 to 25,000</option>
                                     <option>26,000 to 40,000</option>
@@ -227,11 +227,11 @@
                         </div>
 
                         <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" data-rule="required"
+                            <textarea class="form-control" name="message" id="message" rows="5" data-rule="required"
                                 data-msg="Please write something for us" placeholder="Message"></textarea>
                             <div class="validation"></div>
                         </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
+                        <div class="text-center"><button type="submit" id="btn">Send Message</button></div>
                     </form>
                 </div>
         </div>
@@ -401,6 +401,20 @@
 
     <!-- Template Main Javascript File -->
     <script src="js/main.js"></script>
+    <script>
+        const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function handleClick(event) {
+            // 👇️ if you are submitting a form
+            event.preventDefault();
+
+            const inputs = document.querySelectorAll('#name, #name, #number, #email, #subject, #select, #budget,  #message');
+
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        });
+    </script>
 
 </body>
 
